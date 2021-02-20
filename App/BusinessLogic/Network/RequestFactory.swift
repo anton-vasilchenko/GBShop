@@ -14,6 +14,8 @@ class RequestFactory {
         return ErrorParser()
     }
     
+    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+
     lazy var commonSession: Session = {
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false
@@ -26,21 +28,21 @@ class RequestFactory {
     
     func makeAuthRequestFatory() -> AuthRequestFactory {
         let errorParser = makeErrorParser()
-        return Auth(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        return Auth(baseUrl: baseUrl, errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeSignUpRequestFactory() -> SignUpRequestFactory {
         let errorParcer = makeErrorParser()
-        return SignUp(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return SignUp(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeLogoutRequestFactory() -> LogoutRequestFactory {
         let errorParcer = makeErrorParser()
-        return Logout(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return Logout(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeChangeUserDataRequestFactory() -> ChangeUserDataRequestFactory {
         let errorParcer = makeErrorParser()
-        return ChangeUserData(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return ChangeUserData(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
 }

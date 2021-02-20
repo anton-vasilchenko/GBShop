@@ -12,12 +12,14 @@ class SignUp: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl: URL
+//    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
     
-    init(
-        errorParser: AbstractErrorParser,
-        sessionManager: Session,
-        queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
+    init(baseUrl: URL,
+         errorParser: AbstractErrorParser,
+         sessionManager: Session,
+         queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
+        self.baseUrl = baseUrl
         self.errorParser = errorParser
         self.sessionManager = sessionManager
         self.queue = queue
@@ -26,15 +28,14 @@ class SignUp: AbstractRequestFactory {
 
 extension SignUp: SignUpRequestFactory {
     func signUp(id: String, username: String, password: String, email: String, gender: String, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void) {
-        let requestModel = SignUpRequest(
-            baseUrl: baseUrl,
-            id: id,
-            username: username,
-            password: password,
-            email: email,
-            gender: gender,
-            creditCard: creditCard,
-            bio: bio
+        let requestModel = SignUpRequest(baseUrl: baseUrl,
+                                         id: id,
+                                         username: username,
+                                         password: password,
+                                         email: email,
+                                         gender: gender,
+                                         creditCard: creditCard,
+                                         bio: bio
         )
         self.request(request: requestModel, completionHandler: completionHandler)
     }
