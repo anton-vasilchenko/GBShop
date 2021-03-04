@@ -85,6 +85,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        let addReview = requestFactory.makeAddReviewRequestFactory()
+        addReview.addReview(id: 123, reviewText: "Review text") { (response) in
+            switch response.result {
+            case .success(let review):
+                print("Review added")
+                print(review)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        let removeReview = requestFactory.makeRemoveReviewRequestFactory()
+        removeReview.removeReview(id: 123) { (response) in
+            switch response.result {
+            case .success(let review):
+                print("Review removed")
+                print(review)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
         
         
         return true
