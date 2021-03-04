@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let auth = requestFactory.makeAuthRequestFatory()
-//            let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
-
+        //            let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+        
         auth.login(userName: "Somebody", password: "mypassword") { response in
             switch response.result {
             case .success(let login):
@@ -50,6 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+
+        
         let changeUserData = requestFactory.makeChangeUserDataRequestFactory()
         changeUserData.changeData(id: "1", username: "TestUser", password: "TestPassword", email: "123@123.com", gender: "m", creditCard: "123123123123", bio: "Some bio!") { response in
             switch response.result {
@@ -60,9 +62,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
+        
+        let getCatalogData = requestFactory.makeCatalogDataRequestFactory()
+        getCatalogData.getCatalogData(id: 1) { (response) in
+            switch response.result {
+            case .success(let catalogData):
+                print("Recieved catalog data")
+                print(catalogData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        let getGoodById = requestFactory.makeGetGoodByIdRequestFactory()
+        getGoodById.getGoodById(id: 1) { (response) in
+            switch response.result {
+            case .success(let good):
+                print("Got good by ID")
+                print(good)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        
+        
         return true
     }
-        
+    
     
 }
 

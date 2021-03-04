@@ -33,22 +33,6 @@ class SignUpTests: XCTestCase {
                 XCTFail(error.localizedDescription)
             }
         }
-        //
-        //        let loggedIn = expectation(description: "Logged in")
-        //        auth.login(userName: "Somebody", password: "pass") { response in
-        //            switch response.result {
-        //            case .success(let model):
-        //                XCTAssertEqual(model.result, 1)
-        //                XCTAssertEqual(model.user.login, "geekbrains")
-        //                XCTAssertEqual(model.user.name, "John")
-        //                XCTAssertEqual(model.user.lastname, "Doe")
-        //                XCTAssertEqual(model.user.id, 123)
-        //
-        //                loggedIn.fulfill()
-        //            case .failure(let error):
-        //                XCTFail(error.localizedDescription)
-        //            }
-        //        }
         waitForExpectations(timeout: 10)
     }
     

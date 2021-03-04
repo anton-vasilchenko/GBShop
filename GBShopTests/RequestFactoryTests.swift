@@ -98,6 +98,48 @@ class RequestFactoryTests: XCTestCase {
         waitForExpectations(timeout: 10)
     }
     
+    func testCatalogDataRequestFactory() throws {
+        let catalogDataFactory: CatalogDataRequestFactory = try XCTUnwrap(requestFactory).makeCatalogDataRequestFactory()
+        let gotCatalogData = expectation(description: "got catalog data")
+        catalogDataFactory.getCatalogData(id: 1) { response in
+            switch response.result {
+            case .success(let model):
+                guard let elementFirst: CatalogDataResultElement = model.first else { return }
+                guard let elementLast: CatalogDataResultElement = model.last else { return }
+                print("\n\(model)\n")
+                XCTAssertEqual(elementFirst.idProduct, 123)
+                XCTAssertEqual(elementFirst.productName, "Ноутбук")
+                XCTAssertEqual(elementFirst.price, 45600)
+                XCTAssertEqual(elementLast.idProduct, 456)
+                XCTAssertEqual(elementLast.productName, "Мышка")
+                XCTAssertEqual(elementLast.price, 1000)
+                gotCatalogData.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 3.0, handler: nil)
+    }
+    
+    func testGetGoodByIdRequestFactory() throws {
+        let getGoodByIdFactory: GetGoodByIdRequestFactory = try XCTUnwrap(requestFactory).makeGetGoodByIdRequestFactory()
+        let gotGoodById = expectation(description: "got good by id")
+        getGoodByIdFactory.getGoodById(id: 123) { response in
+            switch response.result {
+            case .success(let model):
+                print("\n\(model)\n")
+                XCTAssertEqual(model.result, 1)
+                XCTAssertEqual(model.productName, "Ноутбук")
+                XCTAssertEqual(model.productDescription, "Мощный игровой ноутбук")
+                XCTAssertEqual(model.productPrice, 45600)
+                gotGoodById.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 3.0, handler: nil)
+    }
+    
 
     
 }
