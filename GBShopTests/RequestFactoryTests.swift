@@ -39,7 +39,7 @@ class RequestFactoryTests: XCTestCase {
     func testSignUp() throws {
         let signUp = try XCTUnwrap(requestFactory).makeSignUpRequestFactory()
         let signedUp = expectation(description: "signed in")
-        signUp.signUp(id: "123",
+        signUp.signUp(id: 123,
                       username: "Somebodyy",
                       password: "pass",
                       email: "e@mail.com",
