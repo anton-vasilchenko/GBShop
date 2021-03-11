@@ -14,7 +14,9 @@ class RequestFactory {
         return ErrorParser()
     }
     
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+//    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    
+//    let baseUrl = URL(string: "https://whispering-waters-74907.herokuapp.com/")!
 
     lazy var commonSession: Session = {
         let configuration = URLSessionConfiguration.default
@@ -28,51 +30,51 @@ class RequestFactory {
     
     func makeAuthRequestFatory() -> AuthRequestFactory {
         let errorParser = makeErrorParser()
-        return Auth(baseUrl: baseUrl, errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        return Auth(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeSignUpRequestFactory() -> SignUpRequestFactory {
         let errorParcer = makeErrorParser()
-        return SignUp(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return SignUp(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeLogoutRequestFactory() -> LogoutRequestFactory {
         let errorParcer = makeErrorParser()
-        return Logout(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return Logout(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeChangeUserDataRequestFactory() -> ChangeUserDataRequestFactory {
         let errorParcer = makeErrorParser()
-        return ChangeUserData(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return ChangeUserData(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeCatalogDataRequestFactory() -> CatalogDataRequestFactory {
         let errorParcer = makeErrorParser()
-        return CatalogData(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return CatalogData(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeGetGoodByIdRequestFactory() -> GetGoodByIdRequestFactory {
         let errorParcer = makeErrorParser()
-        return GetGoodById(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return GetGoodById(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeAddReviewRequestFactory() -> AddReviewRequestFactory {
         let errorParcer = makeErrorParser()
-        return AddReview(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return AddReview(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeRemoveReviewRequestFactory() -> RemoveReviewRequestFactory {
         let errorParcer = makeErrorParser()
-        return RemoveReview(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return RemoveReview(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeAddToBasketRequestFactory() -> AddToBasketRequestFactory {
         let errorParcer = makeErrorParser()
-        return AddToBasket(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return AddToBasket(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeDeleteFromBasketRequestFactory() -> DeleteFromBasketRequestFactory {
         let errorParcer = makeErrorParser()
-        return DeleteFromBasket(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+        return DeleteFromBasket(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
 }

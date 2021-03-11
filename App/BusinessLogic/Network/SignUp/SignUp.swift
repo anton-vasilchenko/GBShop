@@ -15,7 +15,7 @@ class SignUp: AbstractRequestFactory {
     let baseUrl: URL
 //    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
     
-    init(baseUrl: URL,
+    init(baseUrl: URL = AppDelegate.baseUrlHeroku,
          errorParser: AbstractErrorParser,
          sessionManager: Session,
          queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
@@ -27,7 +27,7 @@ class SignUp: AbstractRequestFactory {
 }
 
 extension SignUp: SignUpRequestFactory {
-    func signUp(id: String, username: String, password: String, email: String, gender: String, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void) {
+    func signUp(id: Int, username: String, password: String, email: String, gender: String, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void) {
         let requestModel = SignUpRequest(baseUrl: baseUrl,
                                          id: id,
                                          username: username,
@@ -44,10 +44,10 @@ extension SignUp: SignUpRequestFactory {
 extension SignUp {
     struct SignUpRequest: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "registerUser.json"
+        let method: HTTPMethod = .post
+        let path: String = "register"
         
-        let id: String
+        let id: Int
         let username: String
         let password: String
         let email: String

@@ -15,7 +15,7 @@ class DeleteFromBasket: AbstractRequestFactory {
     let baseUrl: URL
 //    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
     
-    init(baseUrl: URL,
+    init(baseUrl: URL = AppDelegate.baseUrlGitGB,
          errorParser: AbstractErrorParser,
          sessionManager: Session,
          queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {

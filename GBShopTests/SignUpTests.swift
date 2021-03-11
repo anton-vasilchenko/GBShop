@@ -12,8 +12,8 @@ import Alamofire
 class SignUpTests: XCTestCase {
     
     func testLogIn() throws {
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
-        
+        let baseUrl = try XCTUnwrap(URL(string: "https://whispering-waters-74907.herokuapp.com/"))
+
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false
         configuration.headers = .default
@@ -23,11 +23,11 @@ class SignUpTests: XCTestCase {
         let signUp = SignUp(baseUrl: baseUrl, errorParser: ErrorParser(), sessionManager: session, queue: DispatchQueue.global(qos: .utility))
         
         let signedUp = expectation(description: "Signed Up")
-        signUp.signUp(id: "123", username: "John", password: "Pass", email: "e@mail.com", gender: "M", creditCard: "123123123", bio: "Some bio") { (response) in
+        signUp.signUp(id: "1234", username: "John", password: "Pass", email: "e@mail.com", gender: "M", creditCard: "123123123", bio: "Some bio") { (response) in
             switch response.result {
             case .success(let model):
-                XCTAssertEqual(model.result, 1)
                 XCTAssertEqual(model.userMessage, "Регистрация прошла успешно!")
+                XCTAssertEqual(model.result, 1)
                 signedUp.fulfill()
             case .failure(let error):
                 XCTFail(error.localizedDescription)
