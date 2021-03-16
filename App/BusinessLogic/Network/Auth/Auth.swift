@@ -14,7 +14,8 @@ class Auth: AbstractRequestFactory {
     let queue: DispatchQueue
     let baseUrl: URL
     
-    init(baseUrl: URL, errorParser: AbstractErrorParser,
+    init(baseUrl: URL = AppDelegate.baseUrlHeroku,
+         errorParser: AbstractErrorParser,
          sessionManager: Session,
          queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
         self.baseUrl = baseUrl
@@ -36,8 +37,8 @@ extension Auth: AuthRequestFactory {
 extension Auth {
     struct Login: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "login.json"
+        let method: HTTPMethod = .post
+        let path: String = "login"
         
         let login: String
         let password: String

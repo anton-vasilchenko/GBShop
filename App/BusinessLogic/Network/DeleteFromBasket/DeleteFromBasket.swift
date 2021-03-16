@@ -15,7 +15,7 @@ class DeleteFromBasket: AbstractRequestFactory {
     let baseUrl: URL
 //    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
     
-    init(baseUrl: URL,
+    init(baseUrl: URL = AppDelegate.baseUrlGitGB,
          errorParser: AbstractErrorParser,
          sessionManager: Session,
          queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
@@ -27,7 +27,7 @@ class DeleteFromBasket: AbstractRequestFactory {
 }
 
 extension DeleteFromBasket: DeleteFromBasketRequestFactory {
-    func addToBasket(id: Int, completionHandler: @escaping (AFDataResponse<AddToBasketResult>) -> Void) {
+    func deleteFromBasket(id: Int, completionHandler: @escaping (AFDataResponse<DeleteFromBasketResult>) -> Void) {
         let requestModel = DeleteFromBasketRequest(baseUrl: baseUrl, id: id)
         self.request(request: requestModel, completionHandler: completionHandler)
     }

@@ -15,7 +15,7 @@ class ChangeUserData: AbstractRequestFactory {
     let baseUrl: URL
 //    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
     
-    init(baseUrl: URL,
+    init(baseUrl: URL = AppDelegate.baseUrlGitGB,
          errorParser: AbstractErrorParser,
          sessionManager: Session,
          queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
@@ -28,8 +28,14 @@ class ChangeUserData: AbstractRequestFactory {
 
 extension ChangeUserData: ChangeUserDataRequestFactory {
 
-    
-    func changeData(id: String, username: String, password: String, email: String, gender: String, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void) {
+    func changeData(id: String,
+                    username: String,
+                    password: String,
+                    email: String,
+                    gender: String,
+                    creditCard: String,
+                    bio: String,
+                    completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void) {
         let requestModel = ChangeUserDataRequest(
             baseUrl: baseUrl,
             id: id,
