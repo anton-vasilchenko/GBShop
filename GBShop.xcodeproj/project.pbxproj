@@ -14,6 +14,9 @@
 		3A0046E42600AA7300ABEEAA /* ReviewListRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046E32600AA7300ABEEAA /* ReviewListRequestFactory.swift */; };
 		3A0046EC2600AB6E00ABEEAA /* PayBasketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046EB2600AB6D00ABEEAA /* PayBasketTests.swift */; };
 		3A0046F12600B47600ABEEAA /* ReviewListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046F02600B47500ABEEAA /* ReviewListTests.swift */; };
+		3A0046F62600D04700ABEEAA /* GoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046F52600D04700ABEEAA /* GoodViewController.swift */; };
+		3A0047082600D19F00ABEEAA /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */; };
+		3A0047092600D19F00ABEEAA /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */; };
 		3A2502F325E01F340058EEBF /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2502F225E01F340058EEBF /* SignUpTests.swift */; };
 		3A54EE6025FA316A00DCB1B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */; };
 		3A54EE6825FA317400DCB1B4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */; };
@@ -100,6 +103,9 @@
 		3A0046E32600AA7300ABEEAA /* ReviewListRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListRequestFactory.swift; sourceTree = "<group>"; };
 		3A0046EB2600AB6D00ABEEAA /* PayBasketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketTests.swift; sourceTree = "<group>"; };
 		3A0046F02600B47500ABEEAA /* ReviewListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListTests.swift; sourceTree = "<group>"; };
+		3A0046F52600D04700ABEEAA /* GoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodViewController.swift; sourceTree = "<group>"; };
+		3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		3A2502F225E01F340058EEBF /* SignUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTests.swift; sourceTree = "<group>"; };
 		3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +207,15 @@
 			path = ReviewList;
 			sourceTree = "<group>";
 		};
+		3A0046FA2600D09100ABEEAA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */,
+				3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3A54EE5E25FA314900DCB1B4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +224,7 @@
 				3A54EE6C25FA318400DCB1B4 /* UserViewController.swift */,
 				3A54EE7125FA319200DCB1B4 /* MainTableViewController.swift */,
 				3A54EE7625FA319800DCB1B4 /* CartTableViewController.swift */,
+				3A0046F52600D04700ABEEAA /* GoodViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -464,6 +480,7 @@
 		3ADBDA2525D4FA7200BC63B8 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				3A0046FA2600D09100ABEEAA /* Cells */,
 				3A54EE5E25FA314900DCB1B4 /* Controllers */,
 			);
 			path = Flows;
@@ -600,6 +617,7 @@
 				3AA79D4825FA160F006B19B7 /* Main.storyboard in Resources */,
 				3ADBD9FA25D4F71900BC63B8 /* LaunchScreen.storyboard in Resources */,
 				3ADBD9F725D4F71900BC63B8 /* Assets.xcassets in Resources */,
+				3A0047092600D19F00ABEEAA /* MainTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +665,7 @@
 				3A54EE7225FA319200DCB1B4 /* MainTableViewController.swift in Sources */,
 				3AD363DD25DFFF29000E09C1 /* LogoutResult.swift in Sources */,
 				3A982A3325F0DB1800AD38E6 /* GetGoodById.swift in Sources */,
+				3A0046F62600D04700ABEEAA /* GoodViewController.swift in Sources */,
 				3A54EE6025FA316A00DCB1B4 /* LoginViewController.swift in Sources */,
 				3A54EE6D25FA318400DCB1B4 /* UserViewController.swift in Sources */,
 				3A982A6525F0E5C300AD38E6 /* RemoveReview.swift in Sources */,
@@ -660,6 +679,7 @@
 				3A6D437E25F64091007314BA /* DeleteFromBasket.swift in Sources */,
 				3A0046CC2600A2C600ABEEAA /* PayBasket.swift in Sources */,
 				3A982A4225F0E0AD00AD38E6 /* AddReviewResult.swift in Sources */,
+				3A0047082600D19F00ABEEAA /* MainTableViewCell.swift in Sources */,
 				3A6AF90A25DBCABF005A42B3 /* SignUpResult.swift in Sources */,
 				3A6AF8B425DBC48C005A42B3 /* AbstractErrorParser.swift in Sources */,
 				3A982A5225F0E16B00AD38E6 /* AddReview.swift in Sources */,
