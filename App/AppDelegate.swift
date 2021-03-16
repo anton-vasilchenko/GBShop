@@ -10,7 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-//    let requestFactory = RequestFactory()
+    let requestFactory = RequestFactory()
     
     
     static let baseUrlGitGB = URL(
@@ -121,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
 //        let deleteFromBasket = requestFactory.makeDeleteFromBasketRequestFactory()
-//        deleteFromBasket.addToBasket(id: 123) { (response) in
+//        deleteFromBasket.deleteFromBasket(id: 123) { (response) in
 //            switch response.result {
 //            case .success(let review):
 //                print("Deleted From basket")
@@ -130,6 +130,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                print(error.localizedDescription)
 //            }
 //        }
+        
+        let payBasket = requestFactory.makePayBasketRequestFactory()
+        payBasket.payBasket(idPayProve: 123) { (response) in
+            switch response.result {
+            case .success(let model):
+                print("Payment accepted")
+                print(model)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        let reviewList = requestFactory.makeReviewListRequestFactory()
+        reviewList.reviewList(idUser: 123, pageNumber: "1") { (response) in
+            switch response.result {
+            case .success(let model):
+                print("Show review")
+                print(model)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
         return true
     }

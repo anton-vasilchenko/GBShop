@@ -14,10 +14,10 @@ class RequestFactory {
         return ErrorParser()
     }
     
-//    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    //    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
     
-//    let baseUrl = URL(string: "https://whispering-waters-74907.herokuapp.com/")!
-
+    //    let baseUrl = URL(string: "https://whispering-waters-74907.herokuapp.com/")!
+    
     lazy var commonSession: Session = {
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false
@@ -68,6 +68,11 @@ class RequestFactory {
         return RemoveReview(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
     
+    func makeReviewListRequestFactory() -> ReviewListRequestFactory {
+        let errorParcer = makeErrorParser()
+        return ReviewList(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+    }
+    
     func makeAddToBasketRequestFactory() -> AddToBasketRequestFactory {
         let errorParcer = makeErrorParser()
         return AddToBasket(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
@@ -76,5 +81,10 @@ class RequestFactory {
     func makeDeleteFromBasketRequestFactory() -> DeleteFromBasketRequestFactory {
         let errorParcer = makeErrorParser()
         return DeleteFromBasket(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+    }
+    
+    func makePayBasketRequestFactory() -> PayBasketRequestFactory {
+        let errorParcer = makeErrorParser()
+        return PayBasket(errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
 }

@@ -155,7 +155,7 @@ class RequestFactoryTests: XCTestCase {
         waitForExpectations(timeout: 10)
     }
     
-    func testRemoveRevireRequestFactory() throws {
+    func testRemoveReviewRequestFactory() throws {
         let removeReviewFactory: RemoveReviewRequestFactory = try XCTUnwrap(requestFactory).makeRemoveReviewRequestFactory()
         let removedReviewFactory = expectation(description: "Review removed")
         removeReviewFactory.removeReview(id: 123) { response in
@@ -163,6 +163,21 @@ class RequestFactoryTests: XCTestCase {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
                 removedReviewFactory.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 10)
+    }
+    
+    func testPayBasketRequestFactory() throws {
+        let payBasketFactory: PayBasketRequestFactory = try XCTUnwrap(requestFactory).makePayBasketRequestFactory()
+        let paidBasketFactory = expectation(description: "Payment accepted")
+        payBasketFactory.payBasket(idPayProve: 1) { response in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+                paidBasketFactory.fulfill()
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
