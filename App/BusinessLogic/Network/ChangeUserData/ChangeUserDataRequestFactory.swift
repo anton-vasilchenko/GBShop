@@ -9,7 +9,13 @@ import Foundation
 import Alamofire
 
 protocol ChangeUserDataRequestFactory {
-    func changeData(id: String, username: String, password: String, email: String, gender: String, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void)
+    func changeData(id: String,
+                    username: String,
+                    password: String,
+                    email: String,
+                    gender: String,
+                    creditCard: String,
+                    bio: String,
+                    completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void)
 
 }
-

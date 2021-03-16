@@ -13,9 +13,8 @@ class GetGoodById: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl: URL
-//    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
-    
-    init(baseUrl: URL,
+
+    init(baseUrl: URL = AppDelegate.baseUrlGitGB,
          errorParser: AbstractErrorParser,
          sessionManager: Session,
          queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
@@ -38,10 +37,10 @@ extension GetGoodById {
         let baseUrl: URL
         let method: HTTPMethod = .get
         let path: String = "getGoodById.json"
-        
+
         let id: Int
         var parameters: Parameters? {
-            return ["id_product" : id]
+            return ["id_product": id]
         }
     }
 }

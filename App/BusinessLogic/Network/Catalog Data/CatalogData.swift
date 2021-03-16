@@ -15,7 +15,7 @@ class CatalogData: AbstractRequestFactory {
     let baseUrl: URL
 //    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
     
-    init(baseUrl: URL,
+    init(baseUrl: URL = AppDelegate.baseUrlGitGB,
          errorParser: AbstractErrorParser,
          sessionManager: Session,
          queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
@@ -41,7 +41,7 @@ extension CatalogData {
         
         let id: Int
         var parameters: Parameters? {
-            return ["id_category" : id]
+            return ["id_category": id]
         }
     }
 }

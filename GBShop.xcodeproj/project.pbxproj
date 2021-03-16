@@ -7,7 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0046C72600A2B900ABEEAA /* PayBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046C62600A2B900ABEEAA /* PayBasketRequestFactory.swift */; };
+		3A0046CC2600A2C600ABEEAA /* PayBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046CB2600A2C600ABEEAA /* PayBasket.swift */; };
+		3A0046D62600AA3D00ABEEAA /* ReviewListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046D52600AA3D00ABEEAA /* ReviewListResult.swift */; };
+		3A0046DC2600AA6300ABEEAA /* ReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046DB2600AA6300ABEEAA /* ReviewList.swift */; };
+		3A0046E42600AA7300ABEEAA /* ReviewListRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046E32600AA7300ABEEAA /* ReviewListRequestFactory.swift */; };
+		3A0046EC2600AB6E00ABEEAA /* PayBasketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046EB2600AB6D00ABEEAA /* PayBasketTests.swift */; };
+		3A0046F12600B47600ABEEAA /* ReviewListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046F02600B47500ABEEAA /* ReviewListTests.swift */; };
+		3A0046F62600D04700ABEEAA /* GoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0046F52600D04700ABEEAA /* GoodViewController.swift */; };
+		3A0047082600D19F00ABEEAA /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */; };
+		3A0047092600D19F00ABEEAA /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */; };
 		3A2502F325E01F340058EEBF /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2502F225E01F340058EEBF /* SignUpTests.swift */; };
+		3A54EE6025FA316A00DCB1B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */; };
+		3A54EE6825FA317400DCB1B4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */; };
+		3A54EE6D25FA318400DCB1B4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE6C25FA318400DCB1B4 /* UserViewController.swift */; };
+		3A54EE7225FA319200DCB1B4 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE7125FA319200DCB1B4 /* MainTableViewController.swift */; };
+		3A54EE7725FA319800DCB1B4 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE7625FA319800DCB1B4 /* CartTableViewController.swift */; };
+		3A54EE8725FA5BDF00DCB1B4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE8625FA5BDF00DCB1B4 /* App.swift */; };
 		3A6AF8B425DBC48C005A42B3 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AF8B325DBC48C005A42B3 /* AbstractErrorParser.swift */; };
 		3A6AF8BC25DBC4BA005A42B3 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AF8BB25DBC4BA005A42B3 /* ErrorParser.swift */; };
 		3A6AF8C225DBC672005A42B3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A6AF8C125DBC672005A42B3 /* Alamofire */; };
@@ -45,6 +61,8 @@
 		3AA2B3D425F63D0C003ED227 /* AddToBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2B3D325F63D0C003ED227 /* AddToBasketResult.swift */; };
 		3AA2B3D925F63D2B003ED227 /* DeleteFromBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2B3D825F63D2B003ED227 /* DeleteFromBasketResult.swift */; };
 		3AA2B3DE25F63D4F003ED227 /* PayBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2B3DD25F63D4F003ED227 /* PayBasketResult.swift */; };
+		3AA79D4825FA160F006B19B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA79D4725FA160F006B19B7 /* Main.storyboard */; };
+		3AA79D5A25FA1C37006B19B7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3AA79D5925FA1C37006B19B7 /* .swiftlint.yml */; };
 		3AD363D025DFFECA000E09C1 /* ChangeUserDataRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD363CF25DFFECA000E09C1 /* ChangeUserDataRequestFactory.swift */; };
 		3AD363D825DFFF12000E09C1 /* ChangeUserDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD363D725DFFF12000E09C1 /* ChangeUserDataResult.swift */; };
 		3AD363DD25DFFF29000E09C1 /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD363DC25DFFF29000E09C1 /* LogoutResult.swift */; };
@@ -78,7 +96,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A0046C62600A2B900ABEEAA /* PayBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketRequestFactory.swift; sourceTree = "<group>"; };
+		3A0046CB2600A2C600ABEEAA /* PayBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasket.swift; sourceTree = "<group>"; };
+		3A0046D52600AA3D00ABEEAA /* ReviewListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListResult.swift; sourceTree = "<group>"; };
+		3A0046DB2600AA6300ABEEAA /* ReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewList.swift; sourceTree = "<group>"; };
+		3A0046E32600AA7300ABEEAA /* ReviewListRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListRequestFactory.swift; sourceTree = "<group>"; };
+		3A0046EB2600AB6D00ABEEAA /* PayBasketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketTests.swift; sourceTree = "<group>"; };
+		3A0046F02600B47500ABEEAA /* ReviewListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListTests.swift; sourceTree = "<group>"; };
+		3A0046F52600D04700ABEEAA /* GoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodViewController.swift; sourceTree = "<group>"; };
+		3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		3A2502F225E01F340058EEBF /* SignUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTests.swift; sourceTree = "<group>"; };
+		3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3A54EE6C25FA318400DCB1B4 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		3A54EE7125FA319200DCB1B4 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		3A54EE7625FA319800DCB1B4 /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		3A54EE8625FA5BDF00DCB1B4 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		3A6AF8B325DBC48C005A42B3 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		3A6AF8BB25DBC4BA005A42B3 /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		3A6AF8C625DBC698005A42B3 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
@@ -115,6 +149,8 @@
 		3AA2B3D325F63D0C003ED227 /* AddToBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketResult.swift; sourceTree = "<group>"; };
 		3AA2B3D825F63D2B003ED227 /* DeleteFromBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBasketResult.swift; sourceTree = "<group>"; };
 		3AA2B3DD25F63D4F003ED227 /* PayBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketResult.swift; sourceTree = "<group>"; };
+		3AA79D4725FA160F006B19B7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3AA79D5925FA1C37006B19B7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3AD363CF25DFFECA000E09C1 /* ChangeUserDataRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataRequestFactory.swift; sourceTree = "<group>"; };
 		3AD363D725DFFF12000E09C1 /* ChangeUserDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataResult.swift; sourceTree = "<group>"; };
 		3AD363DC25DFFF29000E09C1 /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
@@ -162,6 +198,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0046DA2600AA4D00ABEEAA /* ReviewList */ = {
+			isa = PBXGroup;
+			children = (
+				3A0046DB2600AA6300ABEEAA /* ReviewList.swift */,
+				3A0046E32600AA7300ABEEAA /* ReviewListRequestFactory.swift */,
+			);
+			path = ReviewList;
+			sourceTree = "<group>";
+		};
+		3A0046FA2600D09100ABEEAA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */,
+				3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3A54EE5E25FA314900DCB1B4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */,
+				3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */,
+				3A54EE6C25FA318400DCB1B4 /* UserViewController.swift */,
+				3A54EE7125FA319200DCB1B4 /* MainTableViewController.swift */,
+				3A54EE7625FA319800DCB1B4 /* CartTableViewController.swift */,
+				3A0046F52600D04700ABEEAA /* GoodViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		3A6AF8B225DBC473005A42B3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +249,7 @@
 				3AA2B3C325F63C84003ED227 /* AddToBasket */,
 				3A982A6325F0E5B200AD38E6 /* RemoveReview */,
 				3A982A5025F0E16000AD38E6 /* AddReview */,
+				3A0046DA2600AA4D00ABEEAA /* ReviewList */,
 				3A982A2C25F0DAF700AD38E6 /* GetGoodById */,
 				3A982A1125F0CB8A00AD38E6 /* Catalog Data */,
 				3AD363CE25DFFE8A000E09C1 /* LogOut */,
@@ -267,6 +335,8 @@
 		3AA2B3C525F63C9E003ED227 /* PayBasket */ = {
 			isa = PBXGroup;
 			children = (
+				3A0046C62600A2B900ABEEAA /* PayBasketRequestFactory.swift */,
+				3A0046CB2600A2C600ABEEAA /* PayBasket.swift */,
 			);
 			path = PayBasket;
 			sourceTree = "<group>";
@@ -300,6 +370,7 @@
 				3ADBDA0325D4F71900BC63B8 /* GBShopTests */,
 				3ADBDA0E25D4F71900BC63B8 /* GBShopUITests */,
 				3ADBD9EB25D4F71800BC63B8 /* Products */,
+				3AA79D5925FA1C37006B19B7 /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -330,7 +401,9 @@
 				3A982A3725F0DD6200AD38E6 /* CatalogDataTests.swift */,
 				3A982A3C25F0DE2000AD38E6 /* GetGoodByIdTests.swift */,
 				3A982A5E25F0E3D600AD38E6 /* AddReviewTest.swift */,
+				3A0046EB2600AB6D00ABEEAA /* PayBasketTests.swift */,
 				3A982A7125F0E72800AD38E6 /* RemoveReviewTests.swift */,
+				3A0046F02600B47500ABEEAA /* ReviewListTests.swift */,
 			);
 			path = GBShopTests;
 			sourceTree = "<group>";
@@ -370,6 +443,7 @@
 			children = (
 				3ADBD9F625D4F71900BC63B8 /* Assets.xcassets */,
 				3ADBD9F825D4F71900BC63B8 /* LaunchScreen.storyboard */,
+				3AA79D4725FA160F006B19B7 /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -397,6 +471,8 @@
 				3AA2B3D325F63D0C003ED227 /* AddToBasketResult.swift */,
 				3AA2B3D825F63D2B003ED227 /* DeleteFromBasketResult.swift */,
 				3AA2B3DD25F63D4F003ED227 /* PayBasketResult.swift */,
+				3A54EE8625FA5BDF00DCB1B4 /* App.swift */,
+				3A0046D52600AA3D00ABEEAA /* ReviewListResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -404,6 +480,8 @@
 		3ADBDA2525D4FA7200BC63B8 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				3A0046FA2600D09100ABEEAA /* Cells */,
+				3A54EE5E25FA314900DCB1B4 /* Controllers */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -434,6 +512,7 @@
 				3ADBD9E625D4F71800BC63B8 /* Sources */,
 				3ADBD9E725D4F71800BC63B8 /* Frameworks */,
 				3ADBD9E825D4F71800BC63B8 /* Resources */,
+				3AA79D5525FA1AC0006B19B7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -534,8 +613,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA79D5A25FA1C37006B19B7 /* .swiftlint.yml in Resources */,
+				3AA79D4825FA160F006B19B7 /* Main.storyboard in Resources */,
 				3ADBD9FA25D4F71900BC63B8 /* LaunchScreen.storyboard in Resources */,
 				3ADBD9F725D4F71900BC63B8 /* Assets.xcassets in Resources */,
+				3A0047092600D19F00ABEEAA /* MainTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,13 +637,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AA79D5525FA1AC0006B19B7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3ADBD9E625D4F71800BC63B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A54EE7225FA319200DCB1B4 /* MainTableViewController.swift in Sources */,
 				3AD363DD25DFFF29000E09C1 /* LogoutResult.swift in Sources */,
 				3A982A3325F0DB1800AD38E6 /* GetGoodById.swift in Sources */,
+				3A0046F62600D04700ABEEAA /* GoodViewController.swift in Sources */,
+				3A54EE6025FA316A00DCB1B4 /* LoginViewController.swift in Sources */,
+				3A54EE6D25FA318400DCB1B4 /* UserViewController.swift in Sources */,
 				3A982A6525F0E5C300AD38E6 /* RemoveReview.swift in Sources */,
 				3A6AF8F625DBC7A9005A42B3 /* RequestFactory.swift in Sources */,
 				3A982A6D25F0E5CB00AD38E6 /* RemoveReviewRequestFactory.swift in Sources */,
@@ -571,17 +677,22 @@
 				3AD363D825DFFF12000E09C1 /* ChangeUserDataResult.swift in Sources */,
 				3AD363EF25DFFFEA000E09C1 /* ChangeUserData.swift in Sources */,
 				3A6D437E25F64091007314BA /* DeleteFromBasket.swift in Sources */,
+				3A0046CC2600A2C600ABEEAA /* PayBasket.swift in Sources */,
 				3A982A4225F0E0AD00AD38E6 /* AddReviewResult.swift in Sources */,
+				3A0047082600D19F00ABEEAA /* MainTableViewCell.swift in Sources */,
 				3A6AF90A25DBCABF005A42B3 /* SignUpResult.swift in Sources */,
 				3A6AF8B425DBC48C005A42B3 /* AbstractErrorParser.swift in Sources */,
 				3A982A5225F0E16B00AD38E6 /* AddReview.swift in Sources */,
 				3A6AF8C725DBC698005A42B3 /* DataRequest.swift in Sources */,
+				3A0046D62600AA3D00ABEEAA /* ReviewListResult.swift in Sources */,
 				3A6AF8E925DBC777005A42B3 /* AuthRequestFactory.swift in Sources */,
 				3A6AF8D925DBC714005A42B3 /* RequestRouter.swift in Sources */,
+				3A0046DC2600AA6300ABEEAA /* ReviewList.swift in Sources */,
 				3A982A2E25F0DB1100AD38E6 /* GetGoodByIdRequestFactory.swift in Sources */,
 				3ADBD9EE25D4F71800BC63B8 /* AppDelegate.swift in Sources */,
 				3AD363E225DFFFA2000E09C1 /* LogoutRequestFactory.swift in Sources */,
 				3A6AF8DE25DBC737005A42B3 /* LoginResult.swift in Sources */,
+				3A0046E42600AA7300ABEEAA /* ReviewListRequestFactory.swift in Sources */,
 				3A6AF90525DBCA31005A42B3 /* SignUp.swift in Sources */,
 				3AD363EA25DFFFCA000E09C1 /* Logout.swift in Sources */,
 				3AA2B3CF25F63CE8003ED227 /* AddToBasket.swift in Sources */,
@@ -591,14 +702,18 @@
 				3A982A2025F0CD4D00AD38E6 /* CatalogData.swift in Sources */,
 				3A6AF8E325DBC74F005A42B3 /* User.swift in Sources */,
 				3A982A2525F0DAE400AD38E6 /* GetGoodByIdResult.swift in Sources */,
+				3A0046C72600A2B900ABEEAA /* PayBasketRequestFactory.swift in Sources */,
 				3AA2B3DE25F63D4F003ED227 /* PayBasketResult.swift in Sources */,
 				3ADBD9F025D4F71800BC63B8 /* SceneDelegate.swift in Sources */,
 				3A982A1325F0CBE400AD38E6 /* CatalogDataRequestFactory.swift in Sources */,
 				3AA2B3C725F63CDE003ED227 /* AddToBasketRequestFactory.swift in Sources */,
+				3A54EE6825FA317400DCB1B4 /* SignUpViewController.swift in Sources */,
 				3AA2B3D425F63D0C003ED227 /* AddToBasketResult.swift in Sources */,
 				3A6AF8CC25DBC6F2005A42B3 /* AbstractRequestFactory.swift in Sources */,
 				3A6AF90025DBCA28005A42B3 /* SignUpRequestFactory.swift in Sources */,
+				3A54EE8725FA5BDF00DCB1B4 /* App.swift in Sources */,
 				3A6AF8BC25DBC4BA005A42B3 /* ErrorParser.swift in Sources */,
+				3A54EE7725FA319800DCB1B4 /* CartTableViewController.swift in Sources */,
 				3A982A4725F0E0CE00AD38E6 /* RemoveReviewResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,8 +726,10 @@
 				3A2502F325E01F340058EEBF /* SignUpTests.swift in Sources */,
 				3A982A5F25F0E3D600AD38E6 /* AddReviewTest.swift in Sources */,
 				3A982A3D25F0DE2000AD38E6 /* GetGoodByIdTests.swift in Sources */,
+				3A0046F12600B47600ABEEAA /* ReviewListTests.swift in Sources */,
 				3A982A3825F0DD6200AD38E6 /* CatalogDataTests.swift in Sources */,
 				3AD3641025E00E6B000E09C1 /* RequestFactoryTests.swift in Sources */,
+				3A0046EC2600AB6E00ABEEAA /* PayBasketTests.swift in Sources */,
 				3AD3640525E00C78000E09C1 /* AuthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,7 +900,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.avasilchenko.GBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -802,7 +919,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.avasilchenko.GBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
