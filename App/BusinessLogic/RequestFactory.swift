@@ -65,4 +65,14 @@ class RequestFactory {
         let errorParcer = makeErrorParser()
         return RemoveReview(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
+    
+    func makeAddToBasketRequestFactory() -> AddToBasketRequestFactory {
+        let errorParcer = makeErrorParser()
+        return AddToBasket(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+    }
+    
+    func makeDeleteFromBasketRequestFactory() -> DeleteFromBasketRequestFactory {
+        let errorParcer = makeErrorParser()
+        return DeleteFromBasket(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+    }
 }

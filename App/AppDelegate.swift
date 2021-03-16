@@ -106,6 +106,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
+        let addToBasket = requestFactory.makeAddToBasketRequestFactory()
+        addToBasket.addToBasket(id: 123, quantity: 2) { (response) in
+            switch response.result {
+            case .success(let review):
+                print("Added to basket")
+                print(review)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        let deleteFromBasket = requestFactory.makeDeleteFromBasketRequestFactory()
+        deleteFromBasket.addToBasket(id: 123) { (response) in
+            switch response.result {
+            case .success(let review):
+                print("Deleted From basket")
+                print(review)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
         
         
