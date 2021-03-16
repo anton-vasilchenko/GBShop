@@ -55,4 +55,14 @@ class RequestFactory {
         let errorParcer = makeErrorParser()
         return GetGoodById(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
     }
+    
+    func makeAddReviewRequestFactory() -> AddReviewRequestFactory {
+        let errorParcer = makeErrorParser()
+        return AddReview(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+    }
+    
+    func makeRemoveReviewRequestFactory() -> RemoveReviewRequestFactory {
+        let errorParcer = makeErrorParser()
+        return RemoveReview(baseUrl: baseUrl, errorParser: errorParcer, sessionManager: commonSession, queue: sessionQueue)
+    }
 }

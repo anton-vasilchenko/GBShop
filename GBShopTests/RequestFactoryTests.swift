@@ -118,7 +118,7 @@ class RequestFactoryTests: XCTestCase {
                 XCTFail(error.localizedDescription)
             }
         }
-        waitForExpectations(timeout: 3.0, handler: nil)
+        waitForExpectations(timeout: 10)
     }
     
     func testGetGoodByIdRequestFactory() throws {
@@ -137,9 +137,38 @@ class RequestFactoryTests: XCTestCase {
                 XCTFail(error.localizedDescription)
             }
         }
-        waitForExpectations(timeout: 3.0, handler: nil)
+        waitForExpectations(timeout: 10)
     }
     
+    func testAddRevireRequestFactory() throws {
+        let addReviewFactory: AddReviewRequestFactory = try XCTUnwrap(requestFactory).makeAddReviewRequestFactory()
+        let addedReviewFactory = expectation(description: "Review added")
+        addReviewFactory.addReview(id: 123,reviewText: "Review text") { response in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+                addedReviewFactory.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 10)
+    }
+    
+    func testRemoveRevireRequestFactory() throws {
+        let removeReviewFactory: RemoveReviewRequestFactory = try XCTUnwrap(requestFactory).makeRemoveReviewRequestFactory()
+        let removedReviewFactory = expectation(description: "Review removed")
+        removeReviewFactory.removeReview(id: 123) { response in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+                removedReviewFactory.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 10)
+    }
 
     
 }
