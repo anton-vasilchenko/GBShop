@@ -29,7 +29,7 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//
+        //
         idLabel.text = String(app.user[0].id)
         loginLabel.text = app.user[0].login
         nameLabel.text = app.user[0].name
@@ -39,30 +39,25 @@ class UserViewController: UIViewController {
     @IBAction func changeDataButtonTapped(_ sender: Any) {
         
         let changeUserData = requestFactory.makeChangeUserDataRequestFactory()
-        changeUserData.changeData(id: idTextField.text ?? "1", username: usernameTextField.text ?? "TestUser", password: passwordTextField.text ?? "TestPassword", email: emailTextField.text ?? "123@123.com", gender: genderTextField.text ?? "m", creditCard: creditCardTextField.text ?? "123123123123", bio: bioTextField.text ?? "Some bio!") { response in
+        changeUserData.changeData(id: idTextField.text ?? "1",
+                                  username: usernameTextField.text ?? "TestUser",
+                                  password: passwordTextField.text ?? "TestPassword",
+                                  email: emailTextField.text ?? "123@123.com",
+                                  gender: genderTextField.text ?? "m",
+                                  creditCard: creditCardTextField.text ?? "123123123123",
+                                  bio: bioTextField.text ?? "Some bio!") { response in
             switch response.result {
             case .success(let changeUserData):
                 print("Change data")
                 print(changeUserData)
                 DispatchQueue.main.async {
-                let alert = UIAlertController(title: "User data", message: "Data was successfully changed", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                    let alert = UIAlertController(title: "User data", message: "User data changed", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

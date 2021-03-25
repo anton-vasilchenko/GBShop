@@ -10,13 +10,16 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     var catalogData: [CatalogDataResultElement] = []
+    var cartItems: [CatalogDataResultElement] = []
     let requestFactory = RequestFactory()
+    var cartController: CartTableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         tableView.delegate = self
         tableView.dataSource = self
+        cartController = self.tabBarController?.viewControllers![1] as? CartTableViewController
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
         
     }
@@ -54,6 +57,15 @@ class MainTableViewController: UITableViewController {
         cell.addButton.tag = indexPath.row
         cell.addButton.addTarget(self, action: #selector(addToCartTapped(_:)), for: .touchUpInside)
         
+        switch catalogData[indexPath.row].productName {
+        case "Ноутбук":
+            cell.goodPicture.image = UIImage(named: "Laptop")
+        case "Мышка":
+            cell.goodPicture.image = UIImage(named: "Mouse")
+        default:
+            cell.goodPicture.image = UIImage(named: "noImage")
+        }
+        
         return cell
     }
     
@@ -63,6 +75,9 @@ class MainTableViewController: UITableViewController {
             let item = catalogData[indexPath.row]
             controller.item = item
         }
+        if let controller = segue.destination as? CartTableViewController {
+            controller.cartItems = cartItems
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -71,6 +86,8 @@ class MainTableViewController: UITableViewController {
     
     @objc func addToCartTapped(_ sender: UIButton) {
         let item = catalogData[sender.tag]
+        cartController.cartItems.append(item)
+        cartController.tableView.reloadData()
         
         let addToBasket = requestFactory.makeAddToBasketRequestFactory()
         addToBasket.addToBasket(id: item.idProduct, quantity: 1) { (response) in

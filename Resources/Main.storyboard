@@ -357,8 +357,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="ZmT-O5-1ps">
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общая стоимость:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymt-vR-et8">
+                                    <rect key="frame" x="10" y="11.5" width="148" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9To-l3-Qd7">
+                                    <rect key="frame" x="188.5" y="7" width="215.5" height="30"/>
+                                    <state key="normal" title="Купить"/>
+                                    <connections>
+                                        <action selector="buyButtonTapped:" destination="VlS-E2-PTw" eventType="touchUpInside" id="Nb0-eK-gmN"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Api-h0-O7N">
+                                    <rect key="frame" x="168" y="11.5" width="10.5" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="ymt-vR-et8" firstAttribute="centerY" secondItem="ZmT-O5-1ps" secondAttribute="centerY" id="3J7-BU-sF2"/>
+                                <constraint firstItem="ymt-vR-et8" firstAttribute="leading" secondItem="ZmT-O5-1ps" secondAttribute="leading" constant="10" id="NmE-K4-chl"/>
+                                <constraint firstAttribute="trailing" secondItem="9To-l3-Qd7" secondAttribute="trailing" constant="10" id="Ool-3q-Ffn"/>
+                                <constraint firstItem="9To-l3-Qd7" firstAttribute="centerY" secondItem="ZmT-O5-1ps" secondAttribute="centerY" id="Xl9-ZF-ADC"/>
+                                <constraint firstItem="Api-h0-O7N" firstAttribute="leading" secondItem="ymt-vR-et8" secondAttribute="trailing" constant="10" id="f9C-kV-RIr"/>
+                                <constraint firstItem="9To-l3-Qd7" firstAttribute="leading" secondItem="Api-h0-O7N" secondAttribute="trailing" constant="10" id="gAq-Ee-7bx"/>
+                                <constraint firstItem="Api-h0-O7N" firstAttribute="centerY" secondItem="ZmT-O5-1ps" secondAttribute="centerY" id="lOW-IG-L3t"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lst-7T-AoC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lst-7T-AoC" customClass="CartTableViewCell" customModule="GBShop" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lst-7T-AoC" id="Gqo-pB-Q0b">
@@ -373,6 +408,10 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="cart.fill" id="GN0-4S-0Yp"/>
+                    <connections>
+                        <outlet property="buyFooterButton" destination="9To-l3-Qd7" id="Ul4-1x-1Rh"/>
+                        <outlet property="priceFooterLabel" destination="Api-h0-O7N" id="VDX-tg-yRW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bj7-0C-F1D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

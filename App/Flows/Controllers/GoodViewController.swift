@@ -17,7 +17,38 @@ class GoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let requestFactory = RequestFactory()
     var item: CatalogDataResultElement!
+    var cartController: CartTableViewController!
     var reviewList: [ReviewListResultElement] = []
+    var cartItems: [CatalogDataResultElement] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        nameLabel.text = item.productName
+        priceLabel.text = String(item.price)
+        
+        addToCartButton.addTarget(self, action: #selector(addToCartTapped(_:)), for: .touchUpInside)
+        switch item.productName {
+        case "Ноутбук":
+            productImageView.image = UIImage(named: "Laptop")
+        case "Мышка":
+            productImageView.image = UIImage(named: "Mouse")
+        default:
+            productImageView.image = UIImage(named: "noImage")
+        }
+        
+        reviewTable.dataSource = self
+        reviewTable.delegate = self
+        
+        loadReviews()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? MainTableViewController {
+            controller.cartItems.append(contentsOf: self.cartItems)
+        }
+    }
     
     func loadReviews() {
         
@@ -25,8 +56,6 @@ class GoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         reviewList.reviewList(idUser: 123, pageNumber: "1") { (response) in
             switch response.result {
             case .success(let model):
-//                print("Show review")
-//                print(model)
                 self.reviewList = model
                 DispatchQueue.main.async {
                     self.reviewTable.reloadData()
@@ -51,12 +80,11 @@ class GoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc func addToCartTapped(_ sender: UIButton) {
         let addToBasket = requestFactory.makeAddToBasketRequestFactory()
-        //        let item = catalogData[sender.tag]
+        cartItems.append(item)
+
         addToBasket.addToBasket(id: item.idProduct, quantity: 1) { (response) in
             switch response.result {
             case .success:
-                //                print("Added to basket")
-                //                print(review)
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: "Message", message: "Add to basket \(self.item.productName)", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -67,26 +95,4 @@ class GoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        nameLabel.text = item.productName
-        priceLabel.text = String(item.price)
-        addToCartButton.addTarget(self, action: #selector(addToCartTapped(_:)), for: .touchUpInside)
-        switch item.productName {
-        case "Ноутбук":
-            productImageView.image = UIImage(named: "Laptop")
-        case "Мышка":
-            productImageView.image = UIImage(named: "Mouse")
-        default:
-            productImageView.image = UIImage(named: "noImage")
-        }
-        
-        reviewTable.dataSource = self
-        reviewTable.delegate = self
-        
-        loadReviews()
-        
-    }
-    
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -18,13 +18,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     @IBAction func loginButtonPresed(_ sender: Any) {
         
         let auth = requestFactory.makeAuthRequestFatory()
-
+        
         auth.login(userName: loginTextField.text ?? "", password: passwordTextField.text ?? "") { response in
             switch response.result {
             case .success(let login):
@@ -36,13 +34,13 @@ class LoginViewController: UIViewController {
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
         
     }
-
+    
 }

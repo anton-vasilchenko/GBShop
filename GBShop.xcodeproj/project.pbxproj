@@ -18,6 +18,8 @@
 		3A0047082600D19F00ABEEAA /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */; };
 		3A0047092600D19F00ABEEAA /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */; };
 		3A2502F325E01F340058EEBF /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2502F225E01F340058EEBF /* SignUpTests.swift */; };
+		3A477454260C987C000890D6 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A477452260C987C000890D6 /* CartTableViewCell.swift */; };
+		3A477455260C987C000890D6 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A477453260C987C000890D6 /* CartTableViewCell.xib */; };
 		3A54EE6025FA316A00DCB1B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */; };
 		3A54EE6825FA317400DCB1B4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */; };
 		3A54EE6D25FA318400DCB1B4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE6C25FA318400DCB1B4 /* UserViewController.swift */; };
@@ -107,6 +109,8 @@
 		3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		3A2502F225E01F340058EEBF /* SignUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTests.swift; sourceTree = "<group>"; };
+		3A477452260C987C000890D6 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		3A477453260C987C000890D6 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3A54EE6C25FA318400DCB1B4 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 			children = (
 				3A0047062600D19F00ABEEAA /* MainTableViewCell.swift */,
 				3A0047072600D19F00ABEEAA /* MainTableViewCell.xib */,
+				3A477452260C987C000890D6 /* CartTableViewCell.swift */,
+				3A477453260C987C000890D6 /* CartTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 				3AA79D5A25FA1C37006B19B7 /* .swiftlint.yml in Resources */,
 				3AA79D4825FA160F006B19B7 /* Main.storyboard in Resources */,
 				3ADBD9FA25D4F71900BC63B8 /* LaunchScreen.storyboard in Resources */,
+				3A477455260C987C000890D6 /* CartTableViewCell.xib in Resources */,
 				3ADBD9F725D4F71900BC63B8 /* Assets.xcassets in Resources */,
 				3A0047092600D19F00ABEEAA /* MainTableViewCell.xib in Resources */,
 			);
@@ -701,6 +708,7 @@
 				3A6AF8F125DBC78F005A42B3 /* Auth.swift in Sources */,
 				3A982A2025F0CD4D00AD38E6 /* CatalogData.swift in Sources */,
 				3A6AF8E325DBC74F005A42B3 /* User.swift in Sources */,
+				3A477454260C987C000890D6 /* CartTableViewCell.swift in Sources */,
 				3A982A2525F0DAE400AD38E6 /* GetGoodByIdResult.swift in Sources */,
 				3A0046C72600A2B900ABEEAA /* PayBasketRequestFactory.swift in Sources */,
 				3AA2B3DE25F63D4F003ED227 /* PayBasketResult.swift in Sources */,
