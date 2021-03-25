@@ -3,6 +3,8 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - unused_optional_binding # initially was not here
 #  - multiline_parameters_brackets # Multiline parameters should have their surrounding brackets in a new line.
   - trailing_whitespace
+  - implicitly_unwrapped_optional # Implicitly unwrapped optionals should be avoided when possible.
+
 #  - implicit_return # Prefer implicit returns in closures, functions and getters.
 #  - multiline_surrounding_brackets
 #  - multiline_literal_brackets # Multiline literals should have their surrounding brackets in a new line.
@@ -14,7 +16,6 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # Prefer checking isEmpty over comparing count to zero.
   - empty_string # Prefer checking isEmpty over comparing string to an empty string literal.
-  - implicitly_unwrapped_optional # Implicitly unwrapped optionals should be avoided when possible.
   - fallthrough # Fallthrough should be avoided.
   - convenience_type # Types used for hosting only static members should be implemented as a caseless enum to avoid instantiation.
   - fatal_error_message # A fatalError call should have a message.

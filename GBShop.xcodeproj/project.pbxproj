@@ -20,6 +20,8 @@
 		3A2502F325E01F340058EEBF /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2502F225E01F340058EEBF /* SignUpTests.swift */; };
 		3A477454260C987C000890D6 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A477452260C987C000890D6 /* CartTableViewCell.swift */; };
 		3A477455260C987C000890D6 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A477453260C987C000890D6 /* CartTableViewCell.xib */; };
+		3A47745D260CC11F000890D6 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47745C260CC11F000890D6 /* LoginUITests.swift */; };
+		3A477470260CCB14000890D6 /* SignUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47746F260CCB14000890D6 /* SignUpUITests.swift */; };
 		3A54EE6025FA316A00DCB1B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */; };
 		3A54EE6825FA317400DCB1B4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */; };
 		3A54EE6D25FA318400DCB1B4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54EE6C25FA318400DCB1B4 /* UserViewController.swift */; };
@@ -111,6 +113,10 @@
 		3A2502F225E01F340058EEBF /* SignUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTests.swift; sourceTree = "<group>"; };
 		3A477452260C987C000890D6 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		3A477453260C987C000890D6 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		3A47745C260CC11F000890D6 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
+		3A477461260CC42A000890D6 /* FastTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = FastTests.xctestplan; path = GBShop.xcodeproj/FastTests.xctestplan; sourceTree = "<group>"; };
+		3A477465260CC450000890D6 /* SlowTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SlowTests.xctestplan; sourceTree = "<group>"; };
+		3A47746F260CCB14000890D6 /* SignUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITests.swift; sourceTree = "<group>"; };
 		3A54EE5F25FA316A00DCB1B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A54EE6725FA317400DCB1B4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3A54EE6C25FA318400DCB1B4 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -368,10 +374,8 @@
 		3ADBD9E125D4F71800BC63B8 = {
 			isa = PBXGroup;
 			children = (
-				3ADBDA2325D4FA5200BC63B8 /* Environments */,
-				3ADBDA2225D4FA4A00BC63B8 /* Resources */,
-				3ADBDA2125D4FA4400BC63B8 /* Core */,
-				3ADBDA2025D4FA3F00BC63B8 /* App */,
+				3A477461260CC42A000890D6 /* FastTests.xctestplan */,
+				3A477465260CC450000890D6 /* SlowTests.xctestplan */,
 				3ADBD9EC25D4F71800BC63B8 /* GBShop */,
 				3ADBDA0325D4F71900BC63B8 /* GBShopTests */,
 				3ADBDA0E25D4F71900BC63B8 /* GBShopUITests */,
@@ -393,6 +397,10 @@
 		3ADBD9EC25D4F71800BC63B8 /* GBShop */ = {
 			isa = PBXGroup;
 			children = (
+				3ADBDA2325D4FA5200BC63B8 /* Environments */,
+				3ADBDA2225D4FA4A00BC63B8 /* Resources */,
+				3ADBDA2125D4FA4400BC63B8 /* Core */,
+				3ADBDA2025D4FA3F00BC63B8 /* App */,
 			);
 			path = GBShop;
 			sourceTree = "<group>";
@@ -418,6 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				3ADBDA0F25D4F71900BC63B8 /* GBShopUITests.swift */,
+				3A47745C260CC11F000890D6 /* LoginUITests.swift */,
+				3A47746F260CCB14000890D6 /* SignUpUITests.swift */,
 				3ADBDA1125D4F71900BC63B8 /* Info.plist */,
 			);
 			path = GBShopUITests;
@@ -746,7 +756,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A477470260CCB14000890D6 /* SignUpUITests.swift in Sources */,
 				3ADBDA1025D4F71900BC63B8 /* GBShopUITests.swift in Sources */,
+				3A47745D260CC11F000890D6 /* LoginUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,7 +912,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6L8Y48RX9J;
-				INFOPLIST_FILE = Environments/Info.plist;
+				INFOPLIST_FILE = GBShop/Environments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -919,7 +931,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6L8Y48RX9J;
-				INFOPLIST_FILE = Environments/Info.plist;
+				INFOPLIST_FILE = GBShop/Environments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

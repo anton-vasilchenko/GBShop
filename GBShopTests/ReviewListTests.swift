@@ -23,7 +23,7 @@ class ReviewListTest: XCTestCase {
 
         let gotReviewList = expectation(description: "got review list")
 
-        reviewList.reviewList(idUser: 1, pageNumber: 1) { response in
+        reviewList.reviewList(idUser: 1, pageNumber: "1") { response in
             switch response.result {
             case .success(let model):
                 guard let elemrntFirst: ReviewListResultElement = model.first else { return }
@@ -59,7 +59,7 @@ class ReviewListTest: XCTestCase {
 
         let failedGotReviewListt = expectation(description: "failed to get review list")
 
-        reviewList.reviewList(idUser: 1, pageNumber: 1) { response in
+        reviewList.reviewList(idUser: 1, pageNumber: "1") { response in
             switch response.result {
             case .success(let model):
                 XCTFail("Must to have failed: \(model)")
