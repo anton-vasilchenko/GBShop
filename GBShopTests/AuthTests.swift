@@ -12,7 +12,7 @@ import Alamofire
 class AuthTests: XCTestCase {
 
     func testLogIn() throws {
-        let baseURL = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseURL = try XCTUnwrap(URL(string: "https://whispering-waters-74907.herokuapp.com/"))
         
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false
