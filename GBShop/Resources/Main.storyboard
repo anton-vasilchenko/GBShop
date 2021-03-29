@@ -78,11 +78,11 @@
             <objects>
                 <viewController id="T8o-BT-fox" customClass="SignUpViewController" customModule="GBShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QLo-mH-QIi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Gi-Ab-W98">
-                                <rect key="frame" x="191" y="228" width="75" height="238"/>
+                                <rect key="frame" x="191" y="140" width="75" height="238"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6X-tj-9V6">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="34"/>
@@ -517,6 +517,14 @@
                                     <action selector="changeDataButtonTapped:" destination="pG5-KV-B8c" eventType="touchUpInside" id="mqO-Tx-zOR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqV-BX-ZCu">
+                                <rect key="frame" x="184" y="84" width="46" height="30"/>
+                                <state key="normal" title="Выход"/>
+                                <connections>
+                                    <action selector="exitButtonTapped:" destination="pG5-KV-B8c" eventType="touchUpInside" id="Ztm-3j-sne"/>
+                                    <segue destination="KbS-S6-s8b" kind="presentation" modalPresentationStyle="fullScreen" id="ah3-lc-A3l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Wj-zY-kgH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -524,6 +532,8 @@
                             <constraint firstItem="BTb-nF-cgu" firstAttribute="leading" secondItem="0md-Tj-0CB" secondAttribute="trailing" constant="40" id="BAf-3x-FYA"/>
                             <constraint firstItem="BTb-nF-cgu" firstAttribute="centerY" secondItem="w1Q-W0-pQD" secondAttribute="centerY" id="ESV-FG-FU1"/>
                             <constraint firstItem="0md-Tj-0CB" firstAttribute="centerY" secondItem="w1Q-W0-pQD" secondAttribute="centerY" id="VoD-tI-Xkr"/>
+                            <constraint firstItem="iqV-BX-ZCu" firstAttribute="centerX" secondItem="w1Q-W0-pQD" secondAttribute="centerX" id="etL-Sa-7nr"/>
+                            <constraint firstItem="iqV-BX-ZCu" firstAttribute="top" secondItem="4Wj-zY-kgH" secondAttribute="top" constant="40" id="skR-li-zFQ"/>
                             <constraint firstItem="0md-Tj-0CB" firstAttribute="leading" secondItem="4Wj-zY-kgH" secondAttribute="leading" constant="100" id="tDJ-9X-wmi"/>
                         </constraints>
                     </view>
@@ -567,7 +577,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vIz-1l-Z97"/>
+        <segue reference="AR0-fr-9AI"/>
+        <segue reference="ah3-lc-A3l"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>

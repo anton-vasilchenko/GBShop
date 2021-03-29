@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class GoodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -23,6 +24,10 @@ class GoodViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FirebaseAnalytics.Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+                                                AnalyticsParameterItemID: item.idProduct,
+                                                AnalyticsParameterSuccess: "ok"])
         
         nameLabel.text = item.productName
         priceLabel.text = String(item.price)
@@ -90,6 +95,9 @@ class GoodViewController: UIViewController, UITableViewDelegate, UITableViewData
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
+                FirebaseAnalytics.Analytics.logEvent(AnalyticsEventAddToCart, parameters: [
+                                                        AnalyticsParameterItemID: self.item.idProduct,
+                                                        AnalyticsParameterSuccess: "ok"])
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTableViewController: UITableViewController {
     
@@ -36,6 +37,9 @@ class MainTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
+                FirebaseAnalytics.Analytics.logEvent(AnalyticsEventViewItemList, parameters: [
+                                                        AnalyticsParameterItemList: "main goods",
+                                                        AnalyticsParameterSuccess: "ok"])
             case .failure(let error):
                 print(error.localizedDescription)
             }

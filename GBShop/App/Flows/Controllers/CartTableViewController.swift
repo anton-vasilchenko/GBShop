@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class CartTableViewController: UITableViewController {
     @IBOutlet weak var priceFooterLabel: UILabel!
@@ -26,6 +27,9 @@ class CartTableViewController: UITableViewController {
                 print(model)
                 self.cartItems = []
                 self.totalPrice = 0
+                FirebaseAnalytics.Analytics.logEvent(AnalyticsEventPurchase, parameters: [
+                                                        AnalyticsParameterPrice: self.totalPrice,
+                                                        AnalyticsParameterSuccess: "ok"])
                 DispatchQueue.main.async {
                     self.priceFooterLabel.text = String(self.totalPrice)
                     let alert = UIAlertController(title: "Buy", message: "Payment succeded", preferredStyle: UIAlertController.Style.alert)
@@ -69,7 +73,6 @@ class CartTableViewController: UITableViewController {
         
         cell.nameLabel?.text = cartItems[indexPath.row].productName
         cell.priceLabel?.text = String(cartItems[indexPath.row].price)
-//        totalPrice = cartItems.reduce(into: <#Int#>, {$0 += ($1.price ?? 0)})
         totalPrice = cartItems.lazy.compactMap { $0.price }.reduce(0, +)
         priceFooterLabel.text = String(totalPrice)
         
@@ -83,6 +86,19 @@ class CartTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            FirebaseAnalytics.Analytics.logEvent(AnalyticsEventRemoveFromCart, parameters: [
+                                                    AnalyticsParameterItemID: cartItems[indexPath.row].idProduct,
+                                                    AnalyticsParameterSuccess: "ok"])
+            cartItems.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            totalPrice = cartItems.lazy.compactMap { $0.price }.reduce(0, +)
+            priceFooterLabel.text = String(totalPrice)
+            
+        }
     }
     
 }

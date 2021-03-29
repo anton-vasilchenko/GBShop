@@ -4,6 +4,7 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
 #  - multiline_parameters_brackets # Multiline parameters should have their surrounding brackets in a new line.
   - trailing_whitespace
   - implicitly_unwrapped_optional # Implicitly unwrapped optionals should be avoided when possible.
+  - force_cast
 
 #  - implicit_return # Prefer implicit returns in closures, functions and getters.
 #  - multiline_surrounding_brackets

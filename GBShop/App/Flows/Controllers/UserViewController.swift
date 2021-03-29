@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserViewController: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
@@ -22,6 +23,13 @@ class UserViewController: UIViewController {
     @IBOutlet weak var bioTextField: UITextField!
     
     @IBOutlet weak var changeDataButton: UIButton!
+   
+    @IBAction func exitButtonTapped(_ sender: Any) {
+        FirebaseAnalytics.Analytics.logEvent("logout", parameters: [
+            "name": "login" as NSObject,
+            "fullText": "logoutWithSuccess" as NSObject
+        ])
+    }
     
     let requestFactory = RequestFactory()
     

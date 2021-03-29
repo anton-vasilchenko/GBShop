@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -42,7 +43,12 @@ class SignUpViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "signUp", sender: self.signUpButton)
                 }
+                FirebaseAnalytics.Analytics.logEvent("signup", parameters: [
+                    "name": "username" as NSObject,
+                    "fullText": "loginWithSuccess" as NSObject
+                ])
             case .failure(let error):
+                FirebaseCrashlytics.Crashlytics.crashlytics().record(error: error)
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
