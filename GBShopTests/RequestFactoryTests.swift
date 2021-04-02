@@ -13,7 +13,7 @@ class RequestFactoryTests: XCTestCase {
     var requestFactory: RequestFactory?
     
     override func setUpWithError() throws {
-         requestFactory = RequestFactory()
+        requestFactory = RequestFactory()
     }
     
     override func tearDownWithError() throws {
@@ -39,7 +39,7 @@ class RequestFactoryTests: XCTestCase {
     func testSignUp() throws {
         let signUp = try XCTUnwrap(requestFactory).makeSignUpRequestFactory()
         let signedUp = expectation(description: "signed in")
-        signUp.signUp(id: "123",
+        signUp.signUp(id: 123,
                       username: "Somebodyy",
                       password: "pass",
                       email: "e@mail.com",
@@ -75,7 +75,7 @@ class RequestFactoryTests: XCTestCase {
         waitForExpectations(timeout: 10)
     }
     
-
+    
     func testChangeUserData() throws {
         let changeData = try XCTUnwrap(requestFactory).makeChangeUserDataRequestFactory()
         let changedData = expectation(description: "changed user data")
@@ -155,7 +155,7 @@ class RequestFactoryTests: XCTestCase {
         waitForExpectations(timeout: 10)
     }
     
-    func testRemoveRevireRequestFactory() throws {
+    func testRemoveReviewRequestFactory() throws {
         let removeReviewFactory: RemoveReviewRequestFactory = try XCTUnwrap(requestFactory).makeRemoveReviewRequestFactory()
         let removedReviewFactory = expectation(description: "Review removed")
         removeReviewFactory.removeReview(id: 123) { response in
@@ -169,6 +169,70 @@ class RequestFactoryTests: XCTestCase {
         }
         waitForExpectations(timeout: 10)
     }
-
     
+    func testPayBasketRequestFactory() throws {
+        let payBasketFactory: PayBasketRequestFactory = try XCTUnwrap(requestFactory).makePayBasketRequestFactory()
+        let paidBasketFactory = expectation(description: "Payment accepted")
+        payBasketFactory.payBasket(idPayProve: 1) { response in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+                paidBasketFactory.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 10)
+    }
+    
+    func testMakeReviewListRequestFactory() throws {
+        let makeReviewFactory: ReviewListRequestFactory = try XCTUnwrap(requestFactory).makeReviewListRequestFactory()
+        let madeReviewFactory = expectation(description: "Show review list")
+        makeReviewFactory.reviewList(idUser: 123, pageNumber: "1") { response in
+            switch response.result {
+            case .success(let model):
+                guard let elementFirst: ReviewListResultElement = model.first else { return }
+                print(elementFirst)
+                XCTAssertEqual(elementFirst.idUser, 11122)
+                XCTAssertEqual(elementFirst.idComment, 1)
+                XCTAssertEqual(elementFirst.commentText, "Text 1")
+                madeReviewFactory.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 10)
+        
+    }
+    
+    func testmakeAddToBasketRequestFactory() throws {
+        let addToBasketFactory: AddToBasketRequestFactory = try XCTUnwrap(requestFactory).makeAddToBasketRequestFactory()
+        let addedToBasketFactory = expectation(description: "Add to cart")
+        addToBasketFactory.addToBasket(id: 1, quantity: 1) { response in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+                addedToBasketFactory.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 10)
+    }
+    
+    func testmakeDeleteFromBasketRequestFactory() throws {
+        let deleteFromBasketFactory: DeleteFromBasketRequestFactory = try XCTUnwrap(requestFactory).makeDeleteFromBasketRequestFactory()
+        let deletedFromBasketFactory = expectation(description: "Removed from cart")
+        deleteFromBasketFactory.deleteFromBasket(id: 1) { response in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+                deletedFromBasketFactory.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 10)
+        
+    }
 }
